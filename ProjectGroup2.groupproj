@@ -1,0 +1,62 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{bbc9a88b-edc3-4072-8819-4b85174377bb}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="whole_idea.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="доппроги\16+17\Danilevsky_Krylov.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="доппроги\26\Newton.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<BorlandProject>
+					<Default.Personality/>
+				</BorlandProject>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="whole_idea">
+			<MSBuild Projects="whole_idea.dproj"/>
+		</Target>
+		<Target Name="whole_idea:Clean">
+			<MSBuild Targets="Clean" Projects="whole_idea.dproj"/>
+		</Target>
+		<Target Name="whole_idea:Make">
+			<MSBuild Targets="Make" Projects="whole_idea.dproj"/>
+		</Target>
+		<Target Name="Danilevsky_Krylov">
+			<MSBuild Projects="доппроги\16+17\Danilevsky_Krylov.dproj"/>
+		</Target>
+		<Target Name="Danilevsky_Krylov:Clean">
+			<MSBuild Targets="Clean" Projects="доппроги\16+17\Danilevsky_Krylov.dproj"/>
+		</Target>
+		<Target Name="Danilevsky_Krylov:Make">
+			<MSBuild Targets="Make" Projects="доппроги\16+17\Danilevsky_Krylov.dproj"/>
+		</Target>
+		<Target Name="Newton">
+			<MSBuild Projects="доппроги\26\Newton.dproj"/>
+		</Target>
+		<Target Name="Newton:Clean">
+			<MSBuild Targets="Clean" Projects="доппроги\26\Newton.dproj"/>
+		</Target>
+		<Target Name="Newton:Make">
+			<MSBuild Targets="Make" Projects="доппроги\26\Newton.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="whole_idea;Danilevsky_Krylov;Newton"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="whole_idea:Clean;Danilevsky_Krylov:Clean;Newton:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="whole_idea:Make;Danilevsky_Krylov:Make;Newton:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

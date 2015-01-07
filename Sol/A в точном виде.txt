@@ -1,0 +1,1 @@
+(exp(-y)*(sin(bm*y)+bm*cos(bm*y))/(1+bm^2)*(sin((1+an)*x)/(1+an)-sin((1-an)*x)/(1-an))/2

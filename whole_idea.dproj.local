@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.080,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.589,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas=F:\проги\хз че\Переосмысление\только то, что нужно\game_theory\Blotto.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.117,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.032,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.939,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.317,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.817,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.791,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.145,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas=F:\проги\хз че\Переосмысление\только то, что нужно\2dOptimization\Optimization2dForm_Code.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.255,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.678,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.746,F:\проги\хз че\Переосмысление\только то, что нужно\Simplex\simplex_code.dfm=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.495,F:\проги\хз че\Переосмысление\только то, что нужно\game_theory\cargoship1.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.976,=F:\проги\хз че\Переосмысление\только то, что нужно\3rdparty\SpinLock.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.492,=F:\проги\хз че\Переосмысление\только то, что нужно\NdOptimization\OptimizationNdForm_Code.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.327,F:\проги\хз че\Переосмысление\только то, что нужно\Simplex\simplex_.pas=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.536,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.283,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.393,=F:\проги\хз че\Переосмысление\только то, что нужно\NdOptimization\OptimizationNd_vars.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.746,F:\проги\хз че\Переосмысление\только то, что нужно\Simplex\simplex_code.pas=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.323,=F:\проги\хз че\Переосмысление\только то, что нужно\NdOptimization\OptimizationNd_.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.593,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.dfm=F:\проги\хз че\Переосмысление\только то, что нужно\tests\TestFormUnit.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.145,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.dfm=F:\проги\хз че\Переосмысление\только то, что нужно\2dOptimization\Optimization2dForm_Code.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.404,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.dfm=F:\проги\хз че\Переосмысление\только то, что нужно\Sol\Sol_1lab.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.360,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.dfm=F:\проги\хз че\Переосмысление\только то, что нужно\game_theory\cargoship.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.589,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.dfm=F:\проги\хз че\Переосмысление\только то, что нужно\game_theory\Blotto.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.794,=F:\проги\хз че\Переосмысление\только то, что нужно\3rdparty\GpLists.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.987,=F:\проги\хз че\Переосмысление\только то, что нужно\ConvexOptimization\convex_code.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.576,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.dfm=F:\проги\хз че\Переосмысление\только то, что нужно\game_theory\cargoship1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.050,=F:\проги\хз че\Переосмысление\только то, что нужно\whole_idea.todo</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.474,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas=F:\проги\хз че\Переосмысление\только то, что нужно\ConvexOptimization\convex_.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.360,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas=F:\проги\хз че\Переосмысление\только то, что нужно\game_theory\cargoship.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.576,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas=F:\проги\хз че\Переосмысление\только то, что нужно\game_theory\cargoship1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.593,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas=F:\проги\хз че\Переосмысление\только то, что нужно\tests\TestFormUnit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.404,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas=F:\проги\хз че\Переосмысление\только то, что нужно\Sol\Sol_1lab.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.987,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas=F:\проги\хз че\Переосмысление\только то, что нужно\Sol\Sol1_Code.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.192,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.381,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas=F:\проги\хз че\Переосмысление\только то, что нужно\2dOptimization\Optimization2d_vars.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.091,F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas=F:\проги\хз че\Переосмысление\только то, что нужно\2dOptimization\Optimization2d_.pas</Transaction>
+    <Transaction>2013.12.05 08:51:48.798,=F:\проги\хз че\Переосмысление\только то, что нужно\monte-karlo_mm\drunkWalkman_form.pas</Transaction>
+    <Transaction>2013.12.05 08:52:35.943,=F:\проги\хз че\Переосмысление\только то, что нужно\monte-karlo_mm\drunkWalkman_options.pas</Transaction>
+    <Transaction>2013.12.12 03:58:33.631,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>2013.12.12 03:59:30.904,F:\проги\хз че\Переосмысление\только то, что нужно\game_theory\investitions\investitions_code.pas=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.pas</Transaction>
+    <Transaction>2013.12.12 03:59:30.904,F:\проги\хз че\Переосмысление\только то, что нужно\game_theory\investitions\investitions_code.dfm=F:\проги\хз че\Переосмысление\только то, что нужно\Unit1.dfm</Transaction>
+    <Transaction>2013.12.12 03:59:45.749,=F:\проги\хз че\Переосмысление\только то, что нужно\Unit2.pas</Transaction>
+    <Transaction>2013.12.12 04:00:02.474,F:\проги\хз че\Переосмысление\только то, что нужно\game_theory\investitions\investitions_result.pas=F:\проги\хз че\Переосмысление\только то, что нужно\Unit2.pas</Transaction>
+    <Transaction>2013.12.12 04:00:02.474,F:\проги\хз че\Переосмысление\только то, что нужно\game_theory\investitions\investitions_result.dfm=F:\проги\хз че\Переосмысление\только то, что нужно\Unit2.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

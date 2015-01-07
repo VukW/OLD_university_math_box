@@ -1,0 +1,306 @@
+unit Unit3;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, StdCtrls, ComCtrls;
+   const
+   C_CellW=50;
+   C_CellH=15;
+   C_Top=8;
+   C_Left=8;
+   C_LineWidth=1;
+   C_DimW=40;
+   C_DimUDW=15;
+type
+  TForm3 = class(TForm)
+    StringGrid1: TStringGrid;
+    SG: TStringGrid;
+    BSG: TStringGrid;
+    BetaSG: TStringGrid;
+    XSG: TStringGrid;
+    ItN: TLabel;
+    ItNext: TButton;
+    SGDif: TStringGrid;
+    ButFromBeg: TButton;
+    Dimension: TEdit;
+    DimUD: TUpDown;
+    procedure FormCreate(Sender: TObject);
+    procedure ItNextClick(Sender: TObject);
+    procedure ShowX;
+    procedure Calculate;
+    procedure ReadArrays;
+    procedure ButFromBegClick(Sender: TObject);
+    procedure DimensionKeyPress(Sender: TObject; var Key: Char);
+    procedure DimensionChange(Sender: TObject);
+    procedure DimUDClick(Sender: TObject; Button: TUDBtnType);
+    procedure ChangeSizes;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+  ArrIsx: Array of Array of extended;
+  Alpha: array of Array of extended;
+  B: array of extended;
+  Beta: array of extended;
+  k: integer;
+  x: array of extended;
+  XN: extended;
+  implementation
+
+{$R *.dfm}
+
+procedure TForm3.FormCreate(Sender: TObject);
+var cI,cJ,cK: integer;
+begin
+DimUD.Position:=4;
+
+SetLength(ArrIsx,4);
+SetLength(Alpha,4);
+  SetLength(B,4);
+  SetLength(Beta,4);
+  SetLength(x,4);
+for cI := 0 to 3 do
+  begin
+  SetLength(ArrIsx[cI],4);
+  SetLength(ALpha[cI],4);
+  end;
+
+
+ArrIsx[0,0]:=10;  ArrIsx[0,1]:=-1; ArrIsx[0,2]:=-2; ArrIsx[0,3]:=5;
+ArrIsx[1,0]:=4 ;  ArrIsx[1,1]:=28; ArrIsx[1,2]:=7;  ArrIsx[1,3]:=9;
+ArrIsx[2,0]:=6;  ArrIsx[2,1]:=5  ; ArrIsx[2,2]:=-23;ArrIsx[2,3]:=4;
+ArrIsx[3,0]:=1;   ArrIsx[3,1]:= 4; ArrIsx[3,2]:=5;  ArrIsx[3,3]:=-15;
+
+B[0]:=-99;
+B[1]:=0;
+B[2]:=67;
+B[3]:=58;
+
+StringGrid1.Hint:='Исходная матрица коэфф-тов';
+SG.Hint:='матрица коэфф-тов Альфа';
+BSG.Hint:='Матрица исходных свободных членов.';
+BetaSG.Hint:='Матрица Коэфф-тов Бета.'+#13+'А по совместительству и первое приближение.';
+XSG.Hint:='Матрица иксов при данной итерации.';
+SGDif.Hint:='погрешность вычисления для'+#13+'каждого уравнения (строки).';
+ItNext.Hint:='Следующая итерация..';
+ButFromBeg.Hint:='считать матрицу коэфф-тов заново'+#13+'и начать расчет с начала.';
+Dimension.Hint:='Размерность СЛУ';
+DimUD.Hint:='Увеличить/уменьшить размерность СЛУ. от 1 до 100.';
+ItN.Hint:='номер итерации k;'+#13+'норма системы погрешности - требуемая точность.';
+StringGrid1.DefaultRowHeight:=C_CellH;
+StringGrid1.DefaultColWidth:=C_CellW;
+
+SG.DefaultRowHeight:=C_CellH;
+SG.DefaultColWidth:=C_CellW;
+
+XSG.DefaultRowHeight:=C_CellH;
+XSG.DefaultColWidth:=C_CellW;
+
+BSG.DefaultRowHeight:=C_CellH;
+BSG.DefaultColWidth:=C_CellW;
+
+BetaSG.DefaultRowHeight:=C_CellH;
+BetaSG.DefaultColWidth:=C_CellW;
+
+SGDif.DefaultRowHeight:=C_CellH;
+SGDif.DefaultColWidth:=C_CellW;
+
+ChangeSizes;
+Calculate;
+  end;
+
+procedure TForm3.ItNextClick(Sender: TObject);
+var x1: array of extended;
+cI,cJ: integer;
+sum: extended;
+begin
+SetLength(x1,DimUD.Position);
+k:=k+1;
+for cI := 0 to DimUD.Position-1 do
+  x1[cI]:=x[cI];
+
+
+for cI := 0 to DimUD.Position-1 do
+  begin
+  x[cI]:=0;
+  for cJ := 0 to DimUD.Position-1 do
+  begin
+{  showmessage('cI='+IntToStr(cI)+', cJ='+IntToStr(cJ)+#10+
+  'Alpha['+IntToStr(cI)+','+IntToStr(cJ)+']='+floatToStrF(Alpha[cI,cJ],ffGeneral,4,5)+#10
+  +'x['+IntToStr(cJ)+']='+floatToStrF(x[cJ],ffGeneral,4,5)+', x1['+IntToStr(cI)+']='+floatToStrF(x1[cI],ffGeneral,4,5));}
+      x[cI]:=x[cI]+Alpha[cI,cJ]*x[cJ];
+  end;
+  x[cI]:=x[cI]+Beta[cI];
+  end;
+xN:=0;
+for cI := 0 to DimUD.Position-1 do
+  xN:=xN+sqr(x[cI]-x1[cI]);
+xN:=sqrt(xN);
+ItN.Caption:='k='+IntToStr(k)+'; Norm='+FloatToStrF(xN,fffixed,4,5);
+
+ShowX;
+
+for cI := 0 to DimUD.Position-1 do
+  begin
+  sum:=0;
+  for cJ := 0 to DimUD.Position-1 do
+     sum:=sum+x[cJ]*ArrIsx[ci,cJ];
+  sum:=sum-B[cI];
+  SGDif.Cells[0,cI]:=FloatToStrF(Sum,ffFixed,4,5);
+  end;
+end;
+
+procedure TForm3.ShowX;
+var
+cI: integer;
+begin
+  for cI := 0 to DimUD.Position-1 do
+    XSG.Cells[0,cI]:=FloatToStrF(x[cI],ffGeneral,4,3);
+end;
+
+procedure TForm3.ButFromBegClick(Sender: TObject);
+var cI: integer;
+begin
+SetLength(ArrIsx,DimUD.Position);
+SetLength(Alpha,DimUD.Position);
+  SetLength(B,DimUD.Position);
+  SetLength(Beta,DimUD.Position);
+  SetLength(x,DimUD.Position);
+for cI := 0 to DimUD.Position-1 do
+  begin
+  SetLength(ArrIsx[cI],DimUD.Position);
+  SetLength(ALpha[cI],DimUD.Position);
+  end;
+ReadArrays;
+Calculate;
+end;
+
+procedure TForm3.Calculate;
+var cI,cJ: integer;
+begin
+for cI := 0 to DimUD.Position-1 do
+   begin
+   for cJ := 0 to DimUD.Position-1 do
+     begin
+     if cJ<>cI then
+     Alpha[cI,cJ]:=-ArrIsx[cI,cJ]/ArrIsx[cI,cI];
+     end;
+   Alpha[cI,cI]:=0;
+   Beta[cI]:=B[cI]/ArrIsx[cI,cI];
+   end;
+
+for cI := 0 to DimUD.Position-1 do
+  for cJ := 0 to DimUD.Position-1 do
+    StringGrid1.Cells[cj,cI]:=FloatToStr(ArrIsx[cI,cJ]);
+
+for cI := 0 to DimUD.Position-1 do
+  for cJ := 0 to DimUD.Position-1 do
+    SG.Cells[cj,cI]:=FloatToStrF(Alpha[cI,cJ],ffGeneral,4,5);
+
+for cI := 0 to DimUD.Position-1 do
+  BSG.Cells[0,cI]:=FloatToStr(B[cI]);
+
+for cI := 0 to DimUD.Position-1 do
+  BetaSG.Cells[0,cI]:=FloatToStrF(Beta[cI],ffGeneral,4,5);
+
+k:=0;
+for cI := 0 to DimUD.Position-1 do
+  x[cI]:=Beta[cI];
+ShowX;
+ItN.Caption:='k='+IntToStr(k);
+end;
+
+procedure TForm3.DimensionChange(Sender: TObject);
+begin
+SG.ColCount:=DimUD.Position;
+SG.RowCount:=DimUD.Position;
+StringGrid1.ColCount:=DimUD.Position;
+StringGrid1.RowCount:=DimUD.Position;
+BSG.RowCount:=DimUD.Position;
+XSG.RowCount:=DimUD.Position;
+BetaSG.RowCount:=DimUD.Position;
+SGDif.RowCount:=DimUD.Position;
+ChangeSizes;
+end;
+
+procedure TForm3.DimensionKeyPress(Sender: TObject; var Key: Char);
+begin
+if (ord(key)<>VK_TAB) and (ord(key)<>vk_back) and (ord(key)<>vk_delete) and ((key<'0')or(key>'9')) then
+key:=#0;
+end;
+
+procedure TForm3.DimUDClick(Sender: TObject; Button: TUDBtnType);
+begin
+DimensionChange(Sender);
+end;
+
+procedure TForm3.ReadArrays;
+var cI,cJ: integer;
+begin
+for cI := 0 to DimUD.Position-1 do
+begin
+   for cJ := 0 to DimUD.Position-1 do
+     ArrIsx[cI,cJ]:=StrToFloat(StringGrid1.Cells[cJ,cI]);
+B[cI]:=StrToFloat(BSG.Cells[0,cI]);
+end;
+;
+end;
+
+procedure TForm3.ChangeSizes;
+begin
+StringGrid1.Top:=C_Top;
+StringGrid1.Left:=C_Left;
+StringGrid1.Height:=(DimUD.Position-1)*C_LineWidth+DimUD.Position*C_CellH+6;
+StringGrid1.Width:=(DimUD.Position-1)*C_LineWidth+DimUD.Position*C_CellW+6;
+Form3.Text:=IntToStr(StringGrid1.Width);
+SG.Height:=StringGrid1.Height;
+SG.Width:=StringGrid1.Width;
+SG.Top:=StringGrid1.Top+StringGrid1.Height+C_Top;
+SG.Left:=C_Left;
+BSG.Left:=StringGrid1.Left+StringGrid1.Width+2*C_Left;
+BSG.Top:=C_Top;
+BSG.Width:=6+C_CellW;
+BSG.Height:=StringGrid1.Height;
+BetaSG.Top:=SG.Top;
+BetaSG.Left:=BSG.Left;
+BetaSG.Height:=SG.Height;
+BetaSG.Width:=BSG.Width;
+XSG.Top:=C_Top;
+XSG.Left:=BSG.Left+BSG.Width+3*C_Left;
+XSG.Width:=BSG.Width;
+XSG.Height:=BSG.Height;
+SGDif.Top:=C_Top;
+SGDif.Left:=XSG.Left+XSG.Width+5*C_Left;
+SGDif.Width:=XSG.Width;
+SGDif.Height:=XSG.Height;
+Dimension.Top:=SG.Top;
+Dimension.Left:=SGDif.Left;
+Dimension.Height:=C_CellH;
+Dimension.Width:=C_DimW;
+DimUD.Top:=SG.Top;
+DimUD.Left:=SGDif.Left+SGDif.Width-C_DimUDW;
+DimUD.Width:=C_DimUDW;
+DimUD.Height:=C_CellH;
+ItN.Left:=XSG.Left;
+ItN.Top:=Dimension.Top+Dimension.Height+C_Top;
+ItN.Width:=SGDif.Left+SGDif.Width-XSG.Left;
+ItN.Height:=C_CellH;
+ItNext.Left:=XSG.Left;
+ItNext.Top:=ItN.Top+ItN.Height+C_Top;
+ItNext.Height:=2*C_CellH;
+ItNext.Width:=round(3/7*ItN.Width);
+ButFromBeg.Top:=ItNext.Top;
+ButFromBeg.Left:=round(4/7*ItN.Width)+ItN.Left;
+ButFromBeg.Width:=SGDif.Left+SGDif.Width-ButFromBeg.Left;
+ButFromBeg.Height:=ItNext.Height;
+Form3.ClientHeight:=ItNext.Top+ItNext.Height+3*C_Top;
+Form3.ClientWidth:=SGDif.Left+SGDif.Width+5*C_Left;
+end;
+
+end.

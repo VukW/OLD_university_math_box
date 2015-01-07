@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.577,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\SLNU\SLNU_code.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.465,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\SLNU\int_tables_form.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.516,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\interpolation\interp_vars.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.552,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\interpolation\interpolation_.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.220,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\integrals\intgrs_var.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.795,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\2d\Func_PropsForm2d.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.854,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\2d\Graph2d_Caption_Code.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.966,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\Matrix_.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.680,=C:\Users\VukW\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.009,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\Unit4.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.295,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\integrals\integrals_code.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.082,C:\Users\VukW\Documents\RAD Studio\Projects\Project1.dproj=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\Duumvirat.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.482,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\interpolation\interp_form.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.620,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\SLNU\SLNUVars.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.037,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\unit4_vars.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.886,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\2d\vars_2d.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.233,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\integrals\Integrals_.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.731,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\2d\Form_2d_code.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.506,=F:\проги\хз че\Переосмысление\только то, что нужно\2dGrapher_as_dll\SLNU\SLNU_.pas</Transaction>
+  </Transactions>
+</BorlandProject>

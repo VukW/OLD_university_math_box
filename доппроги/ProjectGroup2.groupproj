@@ -1,0 +1,44 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{5184c89a-d5b0-46cc-a09d-5fd6185a5b3a}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="..\Project3.dproj" />
+    <Projects Include="26\Project3.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="Project3">
+    <MSBuild Projects="26\Project3.dproj" Targets="" />
+  </Target>
+  <Target Name="Project3:Clean">
+    <MSBuild Projects="26\Project3.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Project3:Make">
+    <MSBuild Projects="26\Project3.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Project3">
+    <MSBuild Projects="..\Project3.dproj" Targets="" />
+  </Target>
+  <Target Name="Project3:Clean">
+    <MSBuild Projects="..\Project3.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="Project3:Make">
+    <MSBuild Projects="..\Project3.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="Project3;Project3" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="Project3:Clean;Project3:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="Project3:Make;Project3:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

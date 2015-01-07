@@ -1,0 +1,3 @@
+x=cos(t/24)*cost
+y=sin(t/24)*cost
+z=sint
